@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rubik's Club - Web Dev</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="Images/Screenshot_2025-01-04_210857-removebg-preview.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+           'bright-pink': {
+          DEFAULT: '#ff6d7e',
+          100: '#480008',
+          200: '#910011',
+          300: '#d90019',
+          400: '#ff233c',
+          500: '#ff6d7e',
+          600: '#ff8996',
+          700: '#ffa6b1',
+          800: '#ffc4cb',
+          900: '#ffe1e5',
+        },
+        'yellow-green': {
+          DEFAULT: '#9acf40',
+          100: '#1f2b0b',
+          200: '#3f5616',
+          300: '#5e8220',
+          400: '#7dad2b',
+          500: '#9acf40',
+          600: '#aed966',
+          700: '#c3e28c',
+          800: '#d7ecb2',
+          900: '#ebf5d9',
+        },
+        'hunyadi-yellow': {
+          DEFAULT: '#feb43e',
+          100: '#3f2700',
+          200: '#7e4e01',
+          300: '#bd7501',
+          400: '#fc9c01',
+          500: '#feb43e',
+          600: '#fec365',
+          700: '#fed28b',
+          800: '#ffe1b2',
+          900: '#fff0d8',
+        },
+        'egyptian-blue': {
+          DEFAULT: '#1d37a6',
+          100: '#060b21',
+          200: '#0c1642',
+          300: '#112063',
+          400: '#172b84',
+          500: '#1d37a6',
+          600: '#2848d9',
+          700: '#5e76e3',
+          800: '#93a4ec',
+          900: '#c9d1f6',
+        },
+        'tropical-indigo': {
+          DEFAULT: '#ab9feb',
+          100: '#150d41',
+          200: '#2a1b82',
+          300: '#3f28c4',
+          400: '#705cde',
+          500: '#ab9feb',
+          600: '#bab1ef',
+          700: '#ccc5f3',
+          800: '#ddd8f7',
+          900: '#eeecfb',
+        },
+        'fire-engine-red': {
+          DEFAULT: '#d10613',
+          100: '#2a0104',
+          200: '#530308',
+          300: '#7d040c',
+          400: '#a60510',
+          500: '#d10613',
+          600: '#f81928',
+          700: '#fa535e',
+          800: '#fb8c94',
+          900: '#fdc6c9',
+        },
+        'columbia-blue': {
+          DEFAULT: '#c6dbdf',
+          100: '#1e3236',
+          200: '#3d646c',
+          300: '#5b97a3',
+          400: '#91b9c1',
+          500: '#c6dbdf',
+          600: '#d3e3e6',
+          700: '#deeaec',
+          800: '#e9f1f3',
+          900: '#f4f8f9',
+        },
+        white: '#ffffff',
+        'eerie-black': {
+          DEFAULT: '#1a201f',
+          100: '#050606',
+          200: '#0a0c0c',
+          300: '#0f1312',
+          400: '#141918',
+          500: '#1a201f',
+          600: '#42514e',
+          700: '#6b837f',
+          800: '#9badaa',
+          900: '#cdd6d5',
+        },
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="wrapper bg-columbia-blue pt-16 flex flex-col space-y-2">
+    <nav class="bg-gradient-to-r from-blue-800 to-indigo-900 fixed flex z-50 justify-between items-center top-0 px-10 py-2 w-full h-16 flex-wrap rounded-lg">
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden flex items-center">
+        <button id="menu-btn" class="text-deepBlue focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Menu Items -->
+      <div id="menu" class="hidden md:flex flex-col md:flex-row w-full md:w-auto md:space-x-10 md:space-y-0">
+        <a href="/index.html#welcome-text"><div class="text-white p-3 text-opacity-95 text-lg group relative font-sans hover:text-hunyadi-yellow transition-all duration-1000">
+          Home
+          <div class="bg-hunyadi-yellow w-full h-1 rounded my-3 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100 transition-all duration-1000"></div>
+        </div></a>
+        <a href="/index.html#comment-section"><div class="text-white p-3 text-opacity-95 text-lg group relative font-sans hover:text-hunyadi-yellow transition-all duration-1000">
+          Former Members
+          <div class="bg-hunyadi-yellow w-full h-1 rounded my-3 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100 transition-all duration-1000"></div>
+        </div></a>
+        <a href="/teams.html"><div class="text-white p-3 text-opacity-95 text-lg group relative font-sans hover:text-hunyadi-yellow transition-all duration-1000">
+         Teams
+          <div class="bg-hunyadi-yellow w-full h-1 rounded my-3 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100 transition-all duration-1000"></div>
+        </div></a>
+        <a href="#"><div class="text-white p-3 text-opacity-95 text-lg group relative font-sans hover:text-hunyadi-yellow transition-all duration-1000">
+          Events
+          <div class="bg-hunyadi-yellow w-full h-1 rounded my-3 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100 transition-all duration-1000"></div>
+        </div></a>
+        <a href="/about.html"><div class="text-white p-3 text-opacity-95 text-lg group relative font-sans hover:text-hunyadi-yellow transition-all duration-1000">
+          About
+          <div class="bg-hunyadi-yellow w-full h-1 rounded my-3 opacity-0 scale-x-0 group-hover:opacity-100 group-hover:scale-x-100 transition-all duration-1000"></div>
+        </div></a>
+      </div>
+    </nav>
+    <div class="content ">
+      <div class="team flex flex-col justify-center items-center bg-egyptian-blue rounded-lg shadow-lg p-4 space-y-4 max-w-md mx-auto">
+        <h2 class="text-3xl text-fire-engine-red-600 font-semibold">Dance Team</h2>
+        <h3 class="text-2xl text-hunyadi-yellow font-medium">Team Head: Michael Jackson</h3>
+        <div class="members text-lg text-bright-pink space-y-2">
+            <p><strong>Members:</strong> Misty Copeland, Maddie Ziegler, Derek Hough, Shakti Mohan</p>
+            <p><strong>Team Skills:</strong> Hip-Hop, Contemporary, Classical Dance, Choreography, Freestyle</p>
+        </div>
+        <div class="info text-lg text-bright-pink text-center">
+            <p>The Dance Team combines rhythm, creativity, and energy to deliver captivating performances. From modern hip-hop to traditional classical forms, the team choreographs routines that mesmerize the audience. They focus on coordination, expression, and entertainment.</p>
+        </div>
+        <button class="bg-hunyadi-yellow text-white p-2 opacity-80 rounded hover:opacity-100 duration-700 mt-4">Register</button>
+    </div>
+    
+
+    </div>
+    <footer class="bg-gradient-to-r from-blue-800 to-indigo-900 flex  justify-center items-center w-full space-x-2">
+      <div><img src="Images/Screenshot_2025-01-04_210857-removebg-preview.png" class="h-32 w-40"></div>
+      <div> <p class="text-white text-lg">Follow us On :</p></div>
+      <div class="flex space-x-8 items-center">
+        <a href="https://www.instagram.com/rubiks.nitb/" target="_blank"><i class="fa-brands fa-instagram fa-2xl" style="color: #ea1f81;"></i></a>
+        <a href="https://www.linkedin.com/company/rubiks-club-mbc-nit-bhopal/" target="_blank"><i class="fa-brands fa-linkedin fa-2xl" style="color: #3082d9;"></i></a>  
+      </div>
+
+    </footer>
+  </div>
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const menu = document.getElementById('menu');
+
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

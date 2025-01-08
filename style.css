@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components; 
+@tailwind utilities;
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.wrapper{
+  height:100vh;
+  width: 100vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+@keyframes scroll-left{
+  0%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-50%);
+  }
+}
+.scroll-comments{
+  animation: scroll-left 15s linear infinite;
+}
+.notice .scrolling-content {
+  animation: scroll-up 5s linear infinite;
+}
+
+.notice:hover .scrolling-content {
+  animation-play-state: paused;
+}
